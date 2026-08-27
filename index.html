@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ayomide David Oladeji — Computer Scientist · Product Builder · Entrepreneur</title>
+    <meta name="description" content="Portfolio of Ayomide David Oladeji, a Nigerian Computer Science graduate, software & product builder, entrepreneur, and technology enthusiast." />
+    <meta property="og:title" content="Ayomide David Oladeji — Portfolio" />
+    <meta property="og:description" content="A young African technologist building useful products and systems for the real world." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800;900&family=Syne:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+    <script>
+      // Compatibility shim to ensure window.fetch can be safely assigned if polyfills run
+      (function() {
+        try {
+          var originalFetch = window.fetch;
+          var currentFetch = originalFetch;
+          try {
+            Object.defineProperty(window, 'fetch', {
+              get: function() { return currentFetch; },
+              set: function(fn) { currentFetch = fn; },
+              configurable: true,
+              enumerable: true
+            });
+          } catch (e) {
+            try {
+              var proto = Object.getPrototypeOf(window) || (typeof Window !== 'undefined' && Window.prototype);
+              if (proto) {
+                Object.defineProperty(proto, 'fetch', {
+                  get: function() { return currentFetch; },
+                  set: function(fn) { currentFetch = fn; },
+                  configurable: true,
+                  enumerable: true
+                });
+              }
+            } catch (e2) {}
+          }
+        } catch (err) {}
+      })();
+    </script>
+  </head>
+  <body class="bg-[#060913] text-slate-100 antialiased selection:bg-blue-500/30 selection:text-blue-200 overflow-x-hidden min-h-screen">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

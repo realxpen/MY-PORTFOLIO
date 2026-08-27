@@ -1,0 +1,281 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Syne', sans-serif;
+    --font-serif: 'Cinzel', serif;
+    --font-body: 'Outfit', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-script: 'Caveat', cursive;
+  }
+
+  body {
+    font-family: var(--font-body);
+    transition: background-color 0.35s cubic-bezier(0.16, 1, 0.3, 1), color 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow-x: hidden;
+  }
+  
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+  
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+
+  .font-serif-mythic {
+    font-family: var(--font-serif);
+    letter-spacing: 0.04em;
+  }
+
+  .font-script-gold {
+    font-family: var(--font-script);
+  }
+}
+
+/* =========================================================================
+   THEME 1: CYBER TERRACOTTA (Images 1 & 5: Rose Jacquard, Crimson Lithography, Chrome)
+   ========================================================================= */
+.theme-terracotta {
+  --bg-main: #080607;
+  --bg-surface: #110C10;
+  --bg-card: rgba(22, 15, 20, 0.7);
+  --bg-card-hover: rgba(32, 20, 28, 0.85);
+  --text-title: #FDF4F0;
+  --text-body: #D4BDB4;
+  --text-muted: #8E7068;
+  --accent: #C86D51;
+  --accent-secondary: #E11D48;
+  --accent-gold: #DFA84B;
+  --border-subtle: rgba(200, 109, 81, 0.15);
+  --border-active: rgba(225, 29, 72, 0.45);
+  --glow-accent: rgba(225, 29, 72, 0.35);
+  --chrome: #E2E8F0;
+}
+.theme-terracotta body {
+  background-color: var(--bg-main);
+  color: var(--text-title);
+}
+
+/* =========================================================================
+   THEME 2: SOLAR OCHRE & LAVA (Image 2: Marigold Halo, Volcanic Basalt, Magma Glow)
+   ========================================================================= */
+.theme-solar {
+  --bg-main: #080605;
+  --bg-surface: #120D08;
+  --bg-card: rgba(24, 16, 9, 0.75);
+  --bg-card-hover: rgba(36, 23, 12, 0.88);
+  --text-title: #FFFBEB;
+  --text-body: #E4CBB4;
+  --text-muted: #9E7D60;
+  --accent: #F59E0B;
+  --accent-secondary: #EA580C;
+  --accent-gold: #FCD34D;
+  --border-subtle: rgba(245, 158, 11, 0.18);
+  --border-active: rgba(234, 88, 12, 0.5);
+  --glow-accent: rgba(245, 158, 11, 0.38);
+  --chrome: #CBD5E1;
+}
+.theme-solar body {
+  background-color: var(--bg-main);
+  color: var(--text-title);
+}
+
+/* =========================================================================
+   THEME 3: OBSIDIAN & GOLD CODEX (Images 3 & 4: Matte Onyx, Gold Foil Script)
+   ========================================================================= */
+.theme-codex {
+  --bg-main: #050507;
+  --bg-surface: #0B0B0F;
+  --bg-card: rgba(16, 16, 22, 0.75);
+  --bg-card-hover: rgba(24, 24, 34, 0.9);
+  --text-title: #FAF8F5;
+  --text-body: #CFC9BE;
+  --text-muted: #7E786B;
+  --accent: #DFB15B;
+  --accent-secondary: #C59A44;
+  --accent-gold: #FCE8A6;
+  --border-subtle: rgba(223, 177, 91, 0.16);
+  --border-active: rgba(223, 177, 91, 0.5);
+  --glow-accent: rgba(223, 177, 91, 0.3);
+  --chrome: #E2E8F0;
+}
+.theme-codex body {
+  background-color: var(--bg-main);
+  color: var(--text-title);
+}
+
+/* =========================================================================
+   THEME 4: IVORY & CHROME RELIC (High-Fashion Sculptural Parchment)
+   ========================================================================= */
+.theme-ivory {
+  --bg-main: #FAF7F2;
+  --bg-surface: #F2EDE4;
+  --bg-card: rgba(255, 255, 255, 0.92);
+  --bg-card-hover: #FFFFFF;
+  --text-title: #181513;
+  --text-body: #4A433E;
+  --text-muted: #877C74;
+  --accent: #B85D43;
+  --accent-secondary: #8C3E29;
+  --accent-gold: #B4842E;
+  --border-subtle: rgba(74, 67, 62, 0.12);
+  --border-active: rgba(184, 93, 67, 0.4);
+  --glow-accent: rgba(184, 93, 67, 0.18);
+  --chrome: #334155;
+}
+.theme-ivory body {
+  background-color: var(--bg-main);
+  color: var(--text-title);
+}
+
+/* Custom refined scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--border-subtle);
+  border-radius: 9999px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Topographic & Circuit Lithography Canvas Patterns */
+.bg-topo-pattern {
+  background-image: 
+    radial-gradient(ellipse at 50% 0%, var(--glow-accent) 0%, transparent 60%),
+    linear-gradient(to right, var(--border-subtle) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border-subtle) 1px, transparent 1px);
+  background-size: 100% 100%, 48px 48px, 48px 48px;
+}
+
+.bg-dot-matrix {
+  background-image: radial-gradient(var(--accent) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Totemic Halo & Glowing Orbit Rings */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spin-reverse-slow {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.04); }
+}
+
+@keyframes circuit-trace {
+  0% { stroke-dashoffset: 400; }
+  100% { stroke-dashoffset: 0; }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 40s linear infinite;
+}
+
+.animate-spin-reverse-slow {
+  animation: spin-reverse-slow 35s linear infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 6s ease-in-out infinite;
+}
+
+/* Gold Foil Text & Metallic Specular Gradient */
+.text-gold-foil {
+  background: linear-gradient(135deg, #FDF4E3 0%, #DFB15B 35%, #FCE8A6 65%, #B3862D 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-terracotta-flame {
+  background: linear-gradient(135deg, #FFF0EB 0%, #C86D51 40%, #E11D48 80%, #9E4330 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-solar-magma {
+  background: linear-gradient(135deg, #FFFBEB 0%, #F59E0B 35%, #EA580C 75%, #B45309 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-chrome-specular {
+  background: linear-gradient(135deg, #FFFFFF 0%, #E2E8F0 40%, #94A3B8 80%, #F8FAFC 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Cybernetic Card Borders & Glowing Corner Brackets */
+.corner-bracket {
+  position: relative;
+}
+.corner-bracket::before,
+.corner-bracket::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-color: var(--accent);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+.corner-bracket::before {
+  top: -1px;
+  left: -1px;
+  border-top: 2px solid;
+  border-left: 2px solid;
+}
+.corner-bracket::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+}
+.corner-bracket:hover::before {
+  width: 18px;
+  height: 18px;
+  border-color: var(--accent-secondary);
+}
+.corner-bracket:hover::after {
+  width: 18px;
+  height: 18px;
+  border-color: var(--accent-secondary);
+}
+
+/* Glassmorphism & Cybernetic Plates */
+.cyber-plate {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-subtle);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cyber-plate:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-active);
+  box-shadow: 0 12px 36px -8px var(--glow-accent);
+}
+
+/* Ancient Glyph Circuit Lines */
+.circuit-line {
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  height: 1px;
+  width: 100%;
+}
