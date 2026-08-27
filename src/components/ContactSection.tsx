@@ -8,9 +8,11 @@ import {
   Send, 
   Sparkles, 
   Radio,
-  ExternalLink,
+  ExternalLink, 
   ShieldAlert,
-  Compass
+  Compass,
+  Calendar,
+  ChevronRight
 } from 'lucide-react';
 import { SOCIAL_LINKS, PERSONAL_INFO } from '../data/portfolioData';
 import { useTheme } from '../context/ThemeContext';
@@ -104,6 +106,31 @@ export const ContactSection: React.FC = () => {
               <p className="text-xs sm:text-sm leading-relaxed mb-6" style={{ color: 'var(--text-body)' }}>
                 Whether you're exploring a scalable venture, architecting distributed trust rails, seeking a technical speaker, or deploying high-performance data systems, my frequency is open.
               </p>
+
+              {/* Quick Google Calendar Beacon Callout */}
+              <a
+                href="#calendar"
+                className="mb-6 p-4 rounded-2xl border flex items-center justify-between gap-3 cyber-plate transition-all hover:scale-[1.02] group block"
+                style={{
+                  backgroundColor: 'var(--bg-surface)',
+                  borderColor: 'var(--border-active)'
+                }}
+              >
+                <div className="flex items-center gap-3">
+                  <div className="p-2 rounded-xl border text-white" style={{ background: 'linear-gradient(135deg, var(--accent) 0%, var(--accent-secondary) 100%)', borderColor: 'var(--border-active)' }}>
+                    <Calendar className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <span className="text-xs font-serif-mythic font-bold block" style={{ color: 'var(--text-title)' }}>
+                      Schedule with Google Calendar
+                    </span>
+                    <span className="text-[10px] font-mono" style={{ color: 'var(--accent-gold)' }}>
+                      Live Telemetry & Google Meet Link
+                    </span>
+                  </div>
+                </div>
+                <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" style={{ color: 'var(--accent)' }} />
+              </a>
 
               {/* Copyable Email Pill */}
               <div 
@@ -228,7 +255,7 @@ export const ContactSection: React.FC = () => {
                       key={type}
                       type="button"
                       onClick={() => setSubjectType(type)}
-                      className="p-3 rounded-xl text-left text-xs font-mono transition-all border"
+                      className="p-3 rounded-xl text-left text-xs font-mono transition-all border cursor-pointer"
                       style={{
                         backgroundColor: subjectType === type ? 'var(--bg-card-hover)' : 'var(--bg-surface)',
                         borderColor: subjectType === type ? 'var(--border-active)' : 'var(--border-subtle)',

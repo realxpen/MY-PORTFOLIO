@@ -21,11 +21,11 @@ export const PERSONAL_INFO = {
 
 // Social links configuration with clear placeholder identifiers
 export const SOCIAL_LINKS: SocialLinks = {
-  email: 'realxpens@gmail.com',
-  github: 'https://github.com/ayomidedavid', // Replace with your exact GitHub profile
-  linkedin: 'https://linkedin.com/in/ayomide-david-oladeji', // Replace with your exact LinkedIn profile
-  twitter: 'https://twitter.com/ayomidedavid', // Replace with your Twitter/X handle if applicable
-  location: 'Lagos & Abuja, Nigeria',
+  email: 'ayomide.david.oladeji@gmail.com',
+  github: 'https://github.com/realxpen', // Replace with your exact GitHub profile
+  linkedin: 'https://linkedin.com/in/xpenhimself', // Replace with your exact LinkedIn profile
+  twitter: 'https://x.com/xpendesign', // Replace with your Twitter/X handle if applicable
+  location: 'Lagos, Nigeria',
   availabilityStatus: 'Available for high-impact product engineering & venture building',
 };
 

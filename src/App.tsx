@@ -15,6 +15,7 @@ import { JourneyTimeline } from './components/JourneyTimeline';
 import { PresentationsSection } from './components/PresentationsSection';
 import { CurrentlyBuilding } from './components/CurrentlyBuilding';
 import { ThinkingLab } from './components/ThinkingLab';
+import { CalendarSection } from './components/CalendarSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { HustleCaseStudyModal } from './components/HustleCaseStudyModal';
@@ -44,6 +45,7 @@ function PortfolioContent() {
       'presentations',
       'currently-building',
       'thinking',
+      'calendar',
       'contact',
     ];
 
@@ -127,6 +129,8 @@ function PortfolioContent() {
         />
 
         <ThinkingLab />
+
+        <CalendarSection />
 
         <ContactSection />
       </main>

@@ -29,7 +29,8 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
     { name: 'How I Build', href: '#how-i-build', glyph: '05' },
     { name: 'Talks', href: '#presentations', glyph: '06' },
     { name: 'Codex', href: '#thinking', glyph: '07' },
-    { name: 'Contact', href: '#contact', glyph: '08' },
+    { name: 'Calendar', href: '#calendar', glyph: '08' },
+    { name: 'Contact', href: '#contact', glyph: '09' },
   ];
 
   return (
