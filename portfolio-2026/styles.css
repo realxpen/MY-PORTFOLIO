@@ -253,3 +253,8 @@
 }
 @media(max-width:430px){.journal-header .journal-nav a:last-child{display:none}.journal-entry-heading strong{font-size:24px}.thought-card h3{font-size:27px}}
 @media(prefers-reduced-motion:reduce){.thought-card,.thought-card-bottom span,.journal-entry-toggle{transition:none!important}.thought-card:hover{transform:none!important}}
+
+/* Contact email + footer adaptability */
+.contact-email-link{font-weight:700;color:#1c3a13;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;overflow-wrap:anywhere}
+.contact-email-link:hover{color:#000}
+.footer-bottom>div{flex-wrap:wrap;row-gap:12px}
