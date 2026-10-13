@@ -247,7 +247,7 @@ if ('IntersectionObserver' in window) {
       else link.removeAttribute('aria-current');
     });
   }, {rootMargin:'-20% 0px -65% 0px'});
-  ['work','about','experience'].forEach(id=>sectionSpy.observe(document.getElementById(id)));
+  ['work','notes','about','experience'].forEach(id=>sectionSpy.observe(document.getElementById(id)));
 }
 
 // Ambient hero motion only on fine pointers, with an explicit reduced-motion opt-out.
