@@ -1,0 +1,17 @@
+{
+  "name": "Xpen — Product Engineer & Founder",
+  "short_name": "Xpen",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0b0d0c",
+  "theme_color": "#d5f976",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
