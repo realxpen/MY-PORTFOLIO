@@ -2,7 +2,7 @@
 const projects = [
   {
     id: 'hustle', number: '01', name: 'Hustle', subtitle: 'The Economy of You',
-    description: 'A content-first marketplace for discovering talented people, exploring their work, and turning real-world skills into opportunity. Bringing discovery, community, bookings and commerce into one ecosystem.',
+    description: 'Hustle is a content-first marketplace connecting skilled workers with people who need their services. Current development includes social discovery, service previews, consultation-to-booking workflows, adaptive scheduling, and payment-safety foundations. The platform remains in development, with staging and production-readiness checks ongoing.',
     tags: ['React Native', 'NestJS', 'PostgreSQL', 'Product Strategy'], categories: ['products'], status: 'In development',
     role: 'Founder · Product & engineering', repo: 'https://github.com/realxpen/hustle-economy-of-you',
     demo: '', wide: true, art: 'hustle'
@@ -44,7 +44,7 @@ const projects = [
   },
   {
     id: 'moniflow', number: '07', name: 'MONIFlow', subtitle: 'From money intentions to safe actions.',
-    description: 'A mobile-first financial assistant prototype translating plain-language goals into reviewable money plans with deterministic safety checks and explicit user approval.',
+    description: 'MONIFlow is a mobile-first financial assistant exploring how people can turn financial intentions into reviewable actions. Its prototype includes authenticated account experiences, persistent simulated financial activity, wallet-readiness checks, and explicit approval boundaries. Real financial operations remain disabled pending independent verification.',
     tags: ['Expo', 'React Native', 'Fastify', 'BMONI'], categories: ['fintech', 'agents'], status: 'Prototype',
     role: 'BMONI Embedded Hackathon', repo: 'https://github.com/realxpen/moniflow', demo: '',
     wide: false, art: 'moniflow'
