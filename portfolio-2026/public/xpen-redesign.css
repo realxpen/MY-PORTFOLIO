@@ -429,3 +429,10 @@ body { background:var(--bg); color:var(--ink); }
   .filter-bar {gap:5px;}
   .filter-btn {padding:7px 9px;}
 }
+
+/* State visibility must beat component display rules. */
+.projects-page #empty-projects[hidden],.projects-page #project-grid[hidden] {display:none!important;}
+.gallery-route:focus-within {border-color:var(--accent);}
+.project-visual {isolation:isolate;}
+.project-visual [class^="art-"]::before {z-index:2;}
+.project-visual [class^="art-"]::after {z-index:1;}
