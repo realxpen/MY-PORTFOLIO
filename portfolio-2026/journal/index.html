@@ -15,7 +15,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../xpen-redesign.css">
   <script src="../journal.js" defer></script>
+  <script src="../xpen-nav.js" defer></script>
   <!-- Metricool analytics: portfolio and journal page views -->
   <script>
     function loadScript(callback) {
@@ -39,8 +41,9 @@
   <header class="site-header journal-header">
     <div class="container nav-shell">
       <a class="brand" href="../" aria-label="Xpen portfolio home"><span class="brand-symbol">x<span class="brand-dot">.</span></span><span class="brand-word">XPEN<span class="brand-slash">/</span></span></a>
-      <nav class="journal-nav" aria-label="Journal navigation"><a href="../#work">Work</a><a href="#entries" aria-current="page">Journal</a><a href="../#about">About</a></nav>
+      <nav class="journal-nav" id="primary-nav" aria-label="Journal navigation"><a href="../#work">Work</a><a href="../projects/">Projects</a><a href="#entries" aria-current="page">Journal</a><a href="../#about">About</a><a href="../#experience">Journey</a><a class="nav-mobile-contact" href="../#contact">Contact</a></nav>
       <a class="nav-cta" href="../#contact">Let's connect <span aria-hidden="true">↗</span></a>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span></button>
     </div>
   </header>
   <main>
