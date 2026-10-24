@@ -113,6 +113,7 @@ const moreWrap = document.getElementById('work-more-wrap');
 const moreCount = document.getElementById('remaining-count');
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 const INITIAL_PROJECTS = 6;
+const homePriority = ['hustle','aeon','rewind','moniflow','sabi','swifna'];
 let selectedFilter = 'all';
 let showEverything = false;
 let searchTerm = '';
@@ -128,7 +129,7 @@ function matchesProject(project) {
 
 function projectMarkup(project, index) {
   // All content comes from a locally authored, trusted project list.
-  return `<article class="project-card ${project.wide && selectedFilter === 'all' && !searchTerm ? 'project-wide' : ''}" style="--card-order:${index}" data-project="${project.id}">
+  return `<article class="project-card ${project.id === 'hustle' && selectedFilter === 'all' && !searchTerm ? 'project-wide' : ''}" style="--card-order:${index}" data-project="${project.id}">
       <div class="project-visual" role="img" aria-label="Stylized conceptual illustration for ${project.name}">${illustrations[project.art]}</div>
       <div class="project-content">
         <div class="project-overline"><span>${project.number} / ${project.role}</span><span class="project-status"><i></i>${project.status}</span></div>
@@ -140,7 +141,10 @@ function projectMarkup(project, index) {
 }
 
 function renderProjects({ animate = true } = {}) {
-  const matches = projects.filter(matchesProject);
+  const matches = projects.filter(matchesProject).sort((a,b) => {
+    const ia=homePriority.indexOf(a.id), ib=homePriority.indexOf(b.id);
+    return (ia<0?100+Number(a.number):ia) - (ib<0?100+Number(b.number):ib);
+  });
   const collapsed = selectedFilter === 'all' && !searchTerm && !showEverything;
   const visible = collapsed ? matches.slice(0, INITIAL_PROJECTS) : matches;
   const countLeft = Math.max(0, matches.length - INITIAL_PROJECTS);
@@ -213,8 +217,8 @@ renderProjects({animate:false});
 document.getElementById('year').textContent = new Date().getFullYear();
 const menuButton = document.getElementById('menu-toggle');
 const nav = document.getElementById('primary-nav');
-function closeMenu(){nav.classList.remove('open');menuButton.classList.remove('open');menuButton.setAttribute('aria-expanded','false');menuButton.setAttribute('aria-label','Open navigation');}
-menuButton.addEventListener('click',()=>{const open = nav.classList.toggle('open');menuButton.classList.toggle('open',open);menuButton.setAttribute('aria-expanded',String(open));menuButton.setAttribute('aria-label',open?'Close navigation':'Open navigation');});
+function closeMenu(){nav.classList.remove('open');menuButton.classList.remove('open');menuButton.setAttribute('aria-expanded','false');menuButton.setAttribute('aria-label','Open navigation');document.body.classList.remove('menu-open');}
+menuButton.addEventListener('click',()=>{const open = nav.classList.toggle('open');menuButton.classList.toggle('open',open);menuButton.setAttribute('aria-expanded',String(open));menuButton.setAttribute('aria-label',open?'Close navigation':'Open navigation');document.body.classList.toggle('menu-open',open);});
 nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
 document.addEventListener('keydown', e=>{if(e.key==='Escape')closeMenu();});
 document.addEventListener('click', e=>{if(!nav.contains(e.target) && !menuButton.contains(e.target)) closeMenu();});
