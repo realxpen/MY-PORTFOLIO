@@ -394,3 +394,38 @@ body { background:var(--bg); color:var(--ink); }
   .hero .orb-orbit,.ticker-track {animation:none!important;}
   .project-card,.thought-card {transition:none!important;}
 }
+
+
+/* Finishing refinements — editable styles rather than screenshot backgrounds. */
+.gallery-route {display:flex;gap:23px;align-items:center;justify-content:space-between;margin-top:28px;padding:22px 25px;background:#16241a;border:1px solid #344d36;border-radius:12px;}
+.gallery-route>span {font:500 12px/1.5 var(--body);color:#b3c7ad;}
+.gallery-route .btn {white-space:nowrap;}
+.project-visual [class^="art-"]::before {
+  position:absolute!important;inset:auto!important;top:15px!important;left:18px!important;
+  background:none!important;transform:none!important;opacity:1!important;filter:none!important;
+  border:0!important;box-shadow:none!important;animation:none!important;width:auto!important;height:auto!important;
+}
+.project-visual [class^="art-"]::after {
+  position:relative!important;inset:auto!important;transform:none!important;opacity:1!important;filter:none!important;
+  border:0!important;animation:none!important;text-shadow:none!important;
+}
+.projects-page .project-visual [class^="art-"]::before {font-size:9px;}
+.project-visual .art-hustle::after {letter-spacing:-7px;padding-right:7px;}
+.projects-page .project-card .project-content {display:flex;flex-direction:column;}
+.projects-page .project-card .project-bottom {margin-top:auto;}
+.journal-page .journal-nav .nav-mobile-contact {display:none;}
+@media(max-width:720px) {
+  .gallery-route {padding:19px;flex-direction:column;align-items:flex-start;gap:11px;}
+  .gallery-route .btn {width:100%;justify-content:space-between;}
+  .nav-links.open,.journal-nav.open {height:calc(100dvh - 67px);min-height:0;isolation:isolate;}
+  .journal-page .journal-nav.open .nav-mobile-contact {display:flex!important;}
+  .journal-nav.open a {font-size:clamp(20px,6vw,27px);}
+}
+@media(max-width:360px) {
+  .hero-art {height:205px;transform:scale(.53);}
+  .orb-core {width:224px;height:224px;}
+  .orb-letter {font-size:158px;}
+  .orbit-badge {font-size:9px;min-width:128px;}
+  .filter-bar {gap:5px;}
+  .filter-btn {padding:7px 9px;}
+}
