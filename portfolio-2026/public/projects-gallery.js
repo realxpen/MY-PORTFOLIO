@@ -108,7 +108,7 @@ function render(){
     +'<div class="project-bottom"><div class="project-tags">'+p.tags.map(t=>'<span>'+escapeHTML(t)+'</span>').join('')+'</div><div class="project-links">'
     +(p.demo?'<a class="project-link" target="_blank" rel="noopener noreferrer" href="'+escapeHTML(safeUrl(p.demo))+'">Live demo ↗</a>':'')
     +(p.repo?'<a class="project-link" target="_blank" rel="noopener noreferrer" href="'+escapeHTML(safeUrl(p.repo))+'">Source code ↗</a>':'')
-    +'</div></div></div></article>').join('');
+    +'</div><button type="button" class="inspect-project" data-project-id="'+escapeHTML(p.id)+'" aria-label="Inspect '+escapeHTML(p.name)+'">Open project notes <span aria-hidden="true">↗</span></button></div></div></article>').join('');
   empty.hidden=found.length!==0;
   status.textContent='Showing '+found.length+' of '+projects.length+' projects';
 }
