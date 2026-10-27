@@ -2,7 +2,7 @@
 const projects = [
   {
     id: 'hustle', number: '01', name: 'Hustle', subtitle: 'The Economy of You',
-    description: 'Hustle is a content-first marketplace connecting skilled workers with people who need their services. Current development includes social discovery, service previews, consultation-to-booking workflows, adaptive scheduling, and payment-safety foundations. The platform remains in development, with staging and production-readiness checks ongoing.',
+    description: 'Hustle is a content-first marketplace connecting skilled workers with people who need their services. Recent staging development includes published services, private consultation, availability and booking requests, verified reviews, notifications, and strictly simulated wallet and escrow journeys. An independent AWS-backed iPhone preview is being tested alongside the existing staging experience. The platform remains in development, with release acceptance and production-readiness work ongoing.',
     tags: ['React Native', 'NestJS', 'PostgreSQL', 'Product Strategy'], categories: ['products'], status: 'In development',
     role: 'Founder · Product & engineering', repo: 'https://github.com/realxpen/hustle-economy-of-you',
     demo: '', wide: true, art: 'hustle'
@@ -44,7 +44,7 @@ const projects = [
   },
   {
     id: 'moniflow', number: '07', name: 'MONIFlow', subtitle: 'From money intentions to safe actions.',
-    description: 'MONIFlow is a mobile-first financial assistant exploring how people can turn financial intentions into reviewable actions. Its prototype includes authenticated account experiences, persistent simulated financial activity, wallet-readiness checks, and explicit approval boundaries. Real financial operations remain disabled pending independent verification.',
+    description: 'MONIFlow is a mobile-first financial assistant exploring how people can turn financial intentions into safe, reviewable actions. Its current prototype includes an installable iPhone PWA preview, persistent sandbox sessions, account-isolation safeguards, and a read-only Intent Lab for reviewing user-written financial plans. The latest preview still requires an API-origin configuration update before full acceptance. Real financial execution remains disabled.',
     tags: ['Expo', 'React Native', 'Fastify', 'BMONI'], categories: ['fintech', 'agents'], status: 'Prototype',
     role: 'BMONI Embedded Hackathon', repo: 'https://github.com/realxpen/moniflow', demo: '',
     wide: false, art: 'moniflow'
