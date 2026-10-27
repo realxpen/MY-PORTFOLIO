@@ -10,7 +10,7 @@
   let beforeOpen = null;
 
   function closeMenu(restore = false) {
-    if (!isOpen()) return;
+    // Always clear the mobile state, including after a breakpoint resize.
     navigation.classList.remove('open');
     toggle.setAttribute('aria-expanded','false');
     toggle.setAttribute('aria-label','Open menu');
