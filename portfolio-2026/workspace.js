@@ -158,6 +158,7 @@
       meta.className='meta';meta.textContent=category;
       const heading=document.createElement('h2');
       heading.textContent=title;
+      heading.tabIndex=-1;
       const description=document.createElement('p');
       description.className='intro';description.textContent=intro;
       reader.append(meta,heading,description,clone);
@@ -184,7 +185,7 @@
         preview.className='preview';
         preview.textContent=note.querySelector('.journal-entry-intro')?.textContent||'';
         button.append(metadata,title,preview);
-        button.addEventListener('click',()=>chooseNote(note.id,true));
+        button.addEventListener('click',()=>{chooseNote(note.id,true);reader.querySelector('h2')?.focus({preventScroll:true});});
         noteList.appendChild(button);
       }
       if(available.length)chooseNote(available.some(n=>n.id===selectedNote)?selectedNote:available[0].id,false);
@@ -213,6 +214,6 @@
     });
   }
 
-  const year=document.getElementById('os-year');
+  const year=document.getElementById('os-year') || document.getElementById('year');
   if(year)year.textContent=new Date().getFullYear();
 })();
