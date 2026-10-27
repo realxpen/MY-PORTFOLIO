@@ -350,3 +350,11 @@ html:not(.os-js) body.os-experience.journal-page .journal-summary {
 html:not(.os-js) body.os-experience.journal-page .journal-entry-body {
   padding:4px 22px 23px 56px;max-width:90ch;
 }
+
+/* The founder's actual build method is explorable, not a decorative timeline. */
+.os-method-list{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;padding:0;margin:22px 0 0}
+.os-method-list li{display:flex;gap:9px;align-items:center;padding:12px;border:1px solid var(--os-rule);background:#1d2a20;border-radius:7px;min-height:54px}
+.os-method-list li span{color:var(--os-accent);font:600 11px var(--os-head);font-variant-numeric:tabular-nums}
+.os-method-list li strong{font:600 12px/1.35 var(--os-head);color:var(--os-ink)}
+@media(max-width:760px){.os-method-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:390px){.os-method-list li{padding:9px 7px;gap:6px}.os-method-list li strong{font-size:11px}}
