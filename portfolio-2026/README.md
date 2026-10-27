@@ -1,43 +1,50 @@
-# XPEN — Personal portfolio (2026 refresh)
+# XPEN — Personal Workspace (October 2026 concept)
 
-Accessible, responsive, animated portfolio for **Ayomide David Oladeji (Xpen)**.
+This is the static, user-facing portfolio in `portfolio-2026/`, deployed as an assets-only Cloudflare Worker through its **`public/`** directory. The repository root also contains a separate React/Vite application; **do not deploy that application as this portfolio**.
 
-This version lives in `portfolio-2026/` to preserve the existing React application at the repository root.
+## Why this iteration exists
 
-## Features
-- Sticky blurred navigation and scroll progress
-- Search by project name, description, role and technologies (shortcut: `/`)
-- Project category filters and optional expansion from 6 featured to 12 projects
-- Reduced-motion-aware transitions, focus states and accessible mobile navigation
-- No framework or build dependencies
-- Cloudflare Pages-ready headers and manifest
+The previous version was a single marketing-like landing page with anchor sections. The new layout is a **personal workspace**: real, separate places for the work, the thoughts, current learning, and biography. It should feel like an interface to explore, not a sales funnel.
 
-## Local development
+## Real routes
+
+| Route | Purpose | Interactions |
+| --- | --- | --- |
+| `/` | Overview / curated workbench | Active builds, latest journal entries, learning directions, navigation |
+| `/projects/` | Work explorer | Search, category filters, individual project inspector with source/demo links |
+| `/journal/` | Founder's Journal | Topic filters, full-text search, desktop two-pane reader, mobile native expandable notes, deep links |
+| `/now/` | Current focus | Dated snapshot of work, tests and learning; not real-time telemetry |
+| `/about/` | Personal profile | Background, tools, path, contact links |
+
+Other site-wide features: persistent desktop left navigation, mobile bottom navigation, global command search (`Ctrl+K` / `⌘K`, or `/` outside text inputs), native dialogs, keyboard focus and reduced-motion preferences.
+
+## Real content
+
+The 12 project entries are still authored in `projects-gallery.js`. The 12 original journal entries and their IDs remain in `journal/index.html`; `journal.js` still manages filters and mobile deep links. The new `workspace.js` adds global search, the project inspector and desktop reading pane. No invented metrics, fake integrations, financial execution, or real-time updates.
+
+The October 2026 **Now** page is a manually edited public snapshot. Do not describe it as a live activity feed. Project status labels must remain accurate.
+
+## Styles and architecture
+
+- `workspace.css` is the new shared visual system for Overview, Work, Journal, Now and About.
+- Project and journal pages additionally load the original `styles.css`, `xpen-redesign.css`, and `ui-ux-polish.css` for legacy cards and note content, followed by `workspace.css` as the final override.
+- `workspace.js` handles cross-page search and enhancement. It does not fetch user conversations, private data, or API tokens.
+- Metricool's existing portfolio tracker remains included once per route.
+- Each public asset/page has an identical source file under `portfolio-2026/` and a deployable mirror under `portfolio-2026/public/`.
+
+## Develop and verify
+
 ```bash
 cd portfolio-2026
-python3 -m http.server 8080
-# http://localhost:8080
+node verify-workspace.mjs
+python3 -m http.server 8080 --directory public
+# Open http://localhost:8080/
 ```
 
-## Cloudflare Pages deployment
+Review using widths 320, 390, 768, 1024 and 1440 px and keyboard-only navigation. Test global search, project filters, opening an inspector, journal filters/reader, mobile native journal details, direct deep links, manifest resolution, focus rings and reduced motion. Automated checks run on pull requests via `.github/workflows/portfolio-workspace-check.yml`.
 
-In Cloudflare dashboard → Workers & Pages → Create application → Pages → Import Git repository → `realxpen/MY-PORTFOLIO`.
+## Deployment
 
-| Setting | Value |
-| --- | --- |
-| Production branch | `portfolio-refresh-2026` (or `main` after merging the PR) |
-| Framework preset | None |
-| Root directory | `portfolio-2026` |
-| Build command | `exit 0` (or blank) |
-| Build output directory | `.` |
+The portfolio is currently developed against GitHub `main`, with `portfolio-2026/wrangler.jsonc` serving the `public` folder. A GitHub merge does **not** prove that Cloudflare has deployed the latest version. Check the actual Cloudflare Worker deployment and public URL before claiming the site is updated.
 
-After the first deployment, changes pushed to the production branch automatically trigger rebuilds. A successful deploy will create a unique `*.pages.dev` address.
-
-## Editing
-- `index.html`: bio, skills, experience, social accounts and SEO
-- `script.js`: local array of projects, demo URLs and interactive filtering
-- `styles.css`: layout, theme and motion
-- `og-cover.svg`: social card illustration
-- `_headers`: Cloudflare Pages security and caching rules
-
-Conceptual illustrations in the gallery are not presented as actual product screenshots. Verify any external demo links before public launch. No analytics, authentication, payment processing or backend is included in this portfolio.
+Do not merge the personal-workspace concept until review and visual QA are complete. Do not publish unapproved personal details or substitute project prototypes for production launch claims.
