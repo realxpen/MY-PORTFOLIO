@@ -1,0 +1,24 @@
+name: Portfolio workspace smoke checks
+on:
+  pull_request:
+    paths:
+      - 'portfolio-2026/**'
+      - '.github/workflows/portfolio-workspace-check.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'portfolio-2026/**'
+      - '.github/workflows/portfolio-workspace-check.yml'
+permissions:
+  contents: read
+jobs:
+  verify-static-workspace:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verify routes, mirrors, static assets and script syntax
+        run: node portfolio-2026/verify-workspace.mjs

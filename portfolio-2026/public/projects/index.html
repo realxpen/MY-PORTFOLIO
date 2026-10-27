@@ -1,91 +1,111 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="theme-color" content="#0b0d0c">
-  <meta name="description" content="Explore products, prototypes, AI agents and design experiments built by Xpen — Ayomide David Oladeji.">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Selected Projects — Xpen">
-  <meta property="og:description" content="Built, tested, still evolving. Explore Hustle, AEON, REWIND, MONIFlow and more.">
-  <meta property="og:image" content="../og-cover.svg">
-  <title>Projects — Xpen / Building in Public</title>
-  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css">
-  <link rel="stylesheet" href="../xpen-redesign.css">
-  <link rel="stylesheet" href="../ui-ux-polish.css">
-  <script src="../projects-gallery.js" defer></script>
-  <script src="../xpen-nav.js" defer></script>
-  <script src="../nav-focus.js" defer></script>
-  <!-- Metricool analytics -->
-  <script>
-    function loadScript(callback) {
-      var head=document.getElementsByTagName("head")[0],script=document.createElement("script");
-      script.type="text/javascript";script.src="https://tracker.metricool.com/resources/be.js";
-      script.onload=callback;script.onreadystatechange=callback;head.appendChild(script);
-    }
-    loadScript(function(){beTracker.t({hash:"1f43660b56d4fd981dcc907d47ba6ca2"});});
-  </script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b100d">
+<meta name="description" content="Browse all 12 of Xpen's products, experiments and prototypes in an interactive project explorer.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Work — Xpen Personal Workspace">
+<meta property="og:description" content="Browse all 12 of Xpen's products, experiments and prototypes in an interactive project explorer.">
+<meta property="og:image" content="../og-cover.svg">
+<title>Work — Xpen Personal Workspace</title>
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../xpen-redesign.css">
+<link rel="stylesheet" href="../ui-ux-polish.css">
+<link rel="stylesheet" href="../workspace.css">
+<link rel="stylesheet" href="../studio.css">
+<script src="../projects-gallery.js" defer></script>
+<script src="../workspace.js" defer></script>
+<script src="../studio-nav.js" defer></script>
+<script>
+  (function(){
+    var s=document.createElement('script');s.src='https://tracker.metricool.com/resources/be.js';
+    s.onload=function(){if(window.beTracker&&typeof window.beTracker.t==='function')window.beTracker.t({hash:"1f43660b56d4fd981dcc907d47ba6ca2"});};
+    document.head.appendChild(s);
+  })();
+</script>
 </head>
-<body class="projects-page">
-  <div id="top" aria-hidden="true"></div>
-  <a class="skip-link" href="#work">Skip to projects</a>
-  <div class="reading-progress" id="reading-progress" aria-hidden="true"></div>
-  <header class="site-header">
-    <div class="container nav-shell">
-      <a class="brand" href="../" aria-label="Xpen portfolio home"><span class="brand-symbol">x<span class="brand-dot">.</span></span><span class="brand-word">XPEN<span class="brand-slash">/</span></span></a>
-      <nav class="nav-links" id="primary-nav" aria-label="Main navigation">
-        <a href="#work" aria-current="page">Work <span class="nav-num">01</span></a>
-        <a href="../journal/">Journal <span class="nav-num">02</span></a>
-        <a href="../#about">About <span class="nav-num">03</span></a>
-        <a href="../#experience">Journey <span class="nav-num">04</span></a>
-        <a class="nav-mobile-contact" href="../#contact">Contact</a>
-      </nav>
-      <a class="nav-cta" href="../#contact">Let's connect <span aria-hidden="true">↗</span></a>
-      <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-nav"><span></span><span></span></button>
+<body class="os-experience studio-experience projects-page">
+<div id="top" aria-hidden="true"></div>
+<a class="os-skip" href="#main">Skip to main content</a>
+<header class="studio-header ">
+  <div class="studio-header-inner">
+    <a class="studio-brand" href="/" aria-label="Xpen Studio — home">
+      <span class="studio-brand-icon">x<span>.</span></span>
+      <span class="studio-brand-copy"><strong>XPEN</strong><small>STUDIO & FIELD NOTES</small></span>
+    </a>
+    <nav class="studio-navigation" id="studio-navigation" aria-label="Primary navigation">
+      <a href="/" >Studio</a>
+      <a href="/projects/" aria-current="page">Work</a>
+      <a href="/journal/" >Journal</a>
+      <a href="/now/" >Now</a>
+      <a href="/about/" >About</a>
+    </nav>
+    <div class="studio-header-actions">
+      <button type="button" id="os-search-trigger" class="studio-search" aria-label="Search projects and journal notes" title="Search (Ctrl+K)"><svg class="os-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16.3 16.3 4.3 4.3"/></svg></button>
+      <a class="studio-header-cta" href="mailto:ayomide.david.oladeji@gmail.com">Say hello <span aria-hidden="true">↗</span></a>
+      <button type="button" class="studio-menu-toggle" id="studio-menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="studio-navigation"><span></span><span></span></button>
     </div>
-  </header>
-  <main>
-    <section class="projects-hero" aria-labelledby="projects-title">
-      <div class="container">
-        <span class="section-kicker"><span class="section-index">XPEN /</span> REAL BUILDS, REAL LESSONS</span>
-        <h1 id="projects-title">Built, tested,<br><span>still evolving.</span></h1>
-        <p>Products, experiments and prototypes. Some live, some in development, all part of learning how to build useful things for people.</p>
+  </div>
+</header>
+<main class="os-content studio-main" id="main">
+<div class="os-page-heading">
+  <div><p class="os-eyebrow">Project explorer</p><h1>A collection of things I've made.</h1><p>Products, experiments, AI agents and prototypes. Search, filter or open any project for the full context. Different stages are labelled as they are.</p></div>
+  <span class="os-meta-text">12 authored projects</span>
+</div>
+<section class="work" id="work" aria-label="Search and filter projects">
+  <div class="container">
+    <div class="work-toolbar">
+      <label class="work-search-wrap" for="project-search"><svg class="os-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16.3 16.3 4.3 4.3"/></svg>
+        <input type="search" id="project-search" placeholder="Search projects, tools or descriptions…" autocomplete="off" aria-controls="project-grid">
+      </label>
+    </div>
+    <div class="filter-bar" role="group" aria-label="Filter projects">
+      <button class="filter-btn active" type="button" data-filter="all" aria-pressed="true">All work</button>
+      <button class="filter-btn" type="button" data-filter="products" aria-pressed="false">Products</button>
+      <button class="filter-btn" type="button" data-filter="agents" aria-pressed="false">AI &amp; agents</button>
+      <button class="filter-btn" type="button" data-filter="fintech" aria-pressed="false">Fintech</button>
+      <button class="filter-btn" type="button" data-filter="research" aria-pressed="false">Experiments</button>
+    </div>
+    <div class="projects-count" id="filter-status" role="status" aria-live="polite">Showing projects…</div>
+    <div class="project-grid" id="project-grid"></div>
+    <div class="empty-results" id="empty-projects" hidden><h2>No matching work</h2><p>Try a different category or search phrase.</p><button class="os-button" type="button" id="clear-projects">Clear search and filters</button></div>
+    <noscript><p>JavaScript is required for the interactive explorer. You can also <a href="https://github.com/realxpen?tab=repositories">browse my source repositories</a>.</p></noscript>
+  </div>
+</section>
+<dialog id="os-inspector" class="os-inspector" aria-labelledby="os-inspect-name"><button id="os-inspect-close" class="close" type="button" aria-label="Close project notes">✕</button>
+  <div class="inner"><span id="os-inspect-status" class="status"></span><h2 id="os-inspect-name"></h2><p id="os-inspect-subtitle"></p><p id="os-inspect-role" class="role"></p>
+  <p class="description" id="os-inspect-description"></p><div class="tags" id="os-inspect-tags"></div><div class="links" id="os-inspect-links"></div></div>
+</dialog>
+      
+</main>
+<footer class="studio-footer">
+  <div class="studio-footer-inner">
+    <div class="studio-footer-top">
+      <a class="studio-footer-name" href="/">xpen<span>.</span></a>
+      <p class="studio-footer-note">Make things. Stay curious. Keep a record of what you're learning. <strong>Learn. Apply. Exist.</strong></p>
+    </div>
+    <div class="studio-footer-bottom">
+      <span>© <span id="year">2026</span> XPEN · A WORK IN PROGRESS</span>
+      <div class="socials">
+        <a href="https://github.com/realxpen" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/xpenhimself/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://x.com/xpendesign" target="_blank" rel="noopener noreferrer">X</a>
+        <a href="mailto:ayomide.david.oladeji@gmail.com">Email</a>
       </div>
-    </section>
-    <section class="work section-pad" id="work" aria-label="Project explorer">
-      <div class="container">
-        <div class="work-toolbar">
-          <label class="work-search-wrap" for="project-search">
-            <svg class="search-icon" viewBox="0 0 24 24" width="19" height="19" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="10.8" cy="10.8" r="6.7"/><path d="m16 16 4.5 4.5"/></svg>
-            <input type="search" id="project-search" placeholder="Search projects and technologies..." autocomplete="off" aria-controls="project-grid">
-          </label>
-        </div>
-        <div class="filter-bar" role="group" aria-label="Filter projects">
-          <button type="button" class="filter-btn active" data-filter="all" aria-pressed="true">All work</button>
-          <button type="button" class="filter-btn" data-filter="products" aria-pressed="false">Products</button>
-          <button type="button" class="filter-btn" data-filter="agents" aria-pressed="false">AI &amp; agents</button>
-          <button type="button" class="filter-btn" data-filter="fintech" aria-pressed="false">Fintech</button>
-          <button type="button" class="filter-btn" data-filter="research" aria-pressed="false">R&amp;D</button>
-        </div>
-        <div class="projects-count" id="filter-status" role="status" aria-live="polite">Loading projects…</div>
-        <div class="project-grid" id="project-grid"></div>
-        <div id="empty-projects" class="empty-results" hidden><h2>No matching projects</h2><p>Try another category or search term.</p><button type="button" id="clear-projects" class="btn btn-solid">Clear filters ↗</button></div>
-        <noscript><p>JavaScript is required for the interactive explorer. You can also <a href="https://github.com/realxpen?tab=repositories">browse the repositories on GitHub</a>.</p></noscript>
-        <div class="archive-note"><div><span class="archive-icon">✳</span><strong>Everything here is part of the process.</strong><p>I'm always refining the work. A prototype isn't a production launch, and a useful experiment is still worth sharing.</p></div><a class="outline-link" href="../journal/">Read the journal ↗</a></div>
-      </div>
-    </section>
-    <section class="contact section-pad" aria-labelledby="contact-title">
-      <div class="container contact-box">
-        <span class="section-kicker"><span class="section-index">LET'S TALK /</span> BUILD SOMETHING THAT MATTERS</span>
-        <div class="contact-title-row"><h2 id="contact-title">Have a <span>big idea?</span></h2></div>
-        <div class="contact-bottom"><p>Let's make it real. I'm open to thoughtful conversations about software, products and new ideas.</p><div class="contact-buttons"><a class="btn btn-dark" href="mailto:ayomide.david.oladeji@gmail.com">Email me ↗</a><a class="btn btn-outline-light" target="_blank" rel="noopener noreferrer" href="https://x.com/xpendesign">Find me on X ↗</a></div></div>
-      </div>
-    </section>
-  </main>
-  <footer class="footer"><div class="container"><div class="footer-top"><a class="brand" href="../"><span class="brand-symbol">x<span class="brand-dot">.</span></span><span class="brand-word">XPEN<span class="brand-slash">/</span></span></a><span>LEARN. APPLY. EXIST.</span></div><div class="footer-bottom"><span>© <span id="year">2026</span> AYOMIDE DAVID OLADEJI</span><div><a href="../">HOME ↗</a><a href="../journal/">JOURNAL ↗</a><a href="https://github.com/realxpen" target="_blank" rel="noopener noreferrer">GITHUB ↗</a><a href="https://x.com/xpendesign" target="_blank" rel="noopener noreferrer">X ↗</a></div><a href="#top">BACK TO TOP ↑</a></div></div></footer>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
+<dialog class="os-command" id="os-command" aria-label="Search the Xpen workspace">
+    <div class="os-command-head"><svg class="os-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16.3 16.3 4.3 4.3"/></svg><input type="search" id="os-search-input" placeholder="Projects, notes, topics or pages…" autocomplete="off" aria-label="Search projects, journal entries and pages"/><button id="os-search-close" type="button">Esc</button></div>
+    <div class="os-command-results" id="os-search-results"></div><div class="os-command-foot">Press ↑ or ↓ to navigate. Enter opens an item.</div>
+  </dialog>
 </body>
 </html>
