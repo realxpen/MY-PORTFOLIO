@@ -329,3 +329,24 @@ body.os-experience{margin:0;overflow-x:hidden;background:var(--os-bg);color:var(
   html{scroll-behavior:auto}
   .os-experience *, .os-experience *:before,.os-experience *:after{animation-duration:.01ms!important;transition-duration:.01ms!important}
 }
+
+
+/* Progressive enhancement: all authored journal entries remain readable
+   when JavaScript is unavailable; native <details> still expands. */
+html:not(.os-js) .os-command-trigger,
+html:not(.os-js) .os-note-catalog,
+html:not(.os-js) .os-note-reader {display:none!important}
+html:not(.os-js) body.os-experience.journal-page .journal-entry-list {
+  display:grid!important;gap:12px;border:0;max-height:none;
+}
+html:not(.os-js) body.os-experience.journal-page .journal-entry {
+  display:block;background:var(--os-surface);border:1px solid var(--os-rule);
+  border-radius:10px;padding:0;overflow:hidden;
+}
+html:not(.os-js) body.os-experience.journal-page .journal-summary {
+  display:grid;grid-template-columns:26px minmax(0,1fr) 26px;
+  gap:12px;padding:18px;
+}
+html:not(.os-js) body.os-experience.journal-page .journal-entry-body {
+  padding:4px 22px 23px 56px;max-width:90ch;
+}
