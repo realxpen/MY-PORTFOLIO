@@ -1,0 +1,175 @@
+/* Xpen editorial polish / 2026-10-27
+   A focused layer over xpen-redesign.css. Preserve the Xpen color and content system;
+   improve clarity, accessible controls, interaction details, and brand distinctiveness. */
+
+:root {
+  --ui-control-height: 44px;
+  --ui-ease: cubic-bezier(.2, 0, 0, 1);
+  --ui-border-focus: #d5f976;
+}
+html { scroll-padding-top: 96px; }
+body { text-rendering: optimizeLegibility; }
+h1,h2,h3 { text-wrap: balance; }
+p { text-wrap: pretty; }
+.section-heading > p, .hero-description, .journal-hero p { max-width: 62ch; }
+
+/* Clear, consistent focus and comfortably sized pointer targets */
+:is(a,button,input,summary):focus-visible {
+  outline: 2px solid var(--ui-border-focus);
+  outline-offset: 4px;
+}
+.filter-btn,.journal-filter-btn {
+  min-height: var(--ui-control-height);
+  padding-inline: 17px;
+  font-size: 12px;
+  transition: background-color .18s var(--ui-ease),border-color .18s var(--ui-ease),color .18s var(--ui-ease);
+}
+.menu-toggle { min-width:44px; min-height:44px; }
+.nav-cta,.project-link,.text-link,.thoughts-view-link,.learning-now-link,.footer-bottom a {
+  min-height: var(--ui-control-height);
+  display: inline-flex;
+  align-items:center;
+}
+.project-arrow { width:44px; min-width:44px; height:44px; }
+.work-search-wrap, .journal-search-label {
+  min-height: 50px;
+  transition: border-color .18s var(--ui-ease),box-shadow .18s var(--ui-ease);
+}
+.work-search-wrap:focus-within,.journal-search-label:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(213,249,118,.1);
+}
+:is(#work-search,#project-search,#journal-search) { font-size:16px; }
+:is(#work-search,#project-search,#journal-search)::placeholder { color:#b7c4b2;opacity:1; }
+.filter-btn:active,.journal-filter-btn:active,.btn:active {
+  transform:scale(.96);
+}
+
+/* Make the project card a clear editorial story, not a stack of decorative badges */
+.project-card {
+  border-color:#344134;
+  transition: border-color .2s var(--ui-ease),box-shadow .2s var(--ui-ease);
+}
+.project-card:hover { transform:none; border-color:#60754e; box-shadow:0 8px 30px rgba(0,0,0,.2); }
+.project-card:focus-within {border-color:var(--accent);}
+.project-visual {isolation:isolate;}
+.project-visual [class^="art-"] {
+  display:flex;
+  justify-content:flex-start;
+  align-items:flex-end;
+  padding:29px;
+  background:#19251c;
+}
+.project-visual [class^="art-"]::before {
+  color:#c6d7bc;
+  letter-spacing:.1em;
+  font-size:10px;
+}
+.project-visual [class^="art-"]::after {
+  display:block;
+  position:relative!important;
+  width:auto!important;
+  height:auto!important;
+  padding:0!important;
+  margin:0!important;
+  border:0!important;
+  border-radius:0!important;
+  background:none!important;
+  box-shadow:none!important;
+  color:#dcf5be!important;
+  text-shadow:none!important;
+  font:600 clamp(44px,5vw,78px)/1 var(--display)!important;
+  letter-spacing:-.07em!important;
+  white-space:nowrap;
+  transform:none!important;
+  z-index:2;
+}
+.project-visual .art-hustle::after {content:"hustle.";font-weight:700!important;letter-spacing:-.065em!important;}
+.project-visual .art-aeon::after {content:"AEON";}
+.project-visual .art-rewind::after {content:"REWIND";}
+.project-visual .art-sentinel::after {content:"SENTINEL";}
+.project-visual .art-swifna::after {content:"swifna.";}
+.project-visual .art-sabi::after {content:"SABI";}
+.project-visual .art-moniflow::after {content:"MONIFlow";}
+.project-visual .art-agentcommerce::after {content:"AgentCommerce";font-size:clamp(33px,3.4vw,55px)!important;}
+.project-visual .art-nova::after {content:"NovaPilot";}
+.project-visual .art-weave::after {content:"WeaveDirector";font-size:clamp(35px,3.8vw,56px)!important;}
+.project-visual .art-safety::after {content:"Sentinel AI";}
+.project-visual .art-fintech::after {content:"Fintech";}
+/* Each treatment reflects the actual category without inventing product logos. */
+.project-visual .art-hustle {background:#223c27;}
+.project-visual .art-aeon {background:#23282d;}
+.project-visual .art-rewind {background:#23302c;}
+.project-visual .art-sentinel {background:#21302a;}
+.project-visual .art-swifna {background:#253328;}
+.project-visual .art-sabi {background:#1d3028;}
+.project-visual .art-moniflow {background:#20332c;}
+.project-visual .art-agentcommerce {background:#292d25;}
+.project-visual .art-nova {background:#253029;}
+.project-visual .art-weave {background:#2a2e27;}
+.project-visual .art-safety {background:#283029;}
+
+.project-heading-star {display:none;}
+.project-description,.project-wide .project-description {font-size:14px;line-height:1.67;color:#c0cabd;}
+.project-subtitle,.project-status {color:#c5d4c0;}
+.project-overline {font-size:11px;line-height:1.55;}
+.project-tags span {font-size:11px;border-radius:4px;}
+.project-link {font-size:12px;text-underline-offset:5px;}
+.project-links {gap:17px;}
+.work-hint {font-size:12px;}
+.thought-card {
+  transition:border-color .2s var(--ui-ease),background-color .2s var(--ui-ease);
+}
+.thought-card:hover {transform:none;}
+.thought-card-top,.thought-number {font-size:11px;}
+.thought-card-content p,.journal-now-item p,.stack-box p {font-size:14px;line-height:1.65;}
+.thought-card-bottom {font-size:12px;}
+.journal-now-item > span,.journal-entry-category {font-size:11px;}
+.journal-entry-intro {font-size:14px;}
+.journal-summary {min-height:74px;}
+.journal-entry-toggle {
+  transition:transform .2s var(--ui-ease),color .2s var(--ui-ease);
+}
+.journal-entry[open] .journal-entry-toggle {transform:rotate(45deg);}
+.journal-entry-body {max-width:88ch;line-height:1.8;}
+.journal-entry-body p {max-width:78ch;}
+.contact-email-link {text-decoration-thickness:1px;text-underline-offset:5px;}
+.footer-bottom a {font-size:11px;}
+
+/* Brand motion: keep its personality while making the content quiet and readable. */
+.orb-core {box-shadow:0 0 0 11px rgba(213,249,118,.08),0 0 0 32px rgba(213,249,118,.03);}
+.orbit-badge {box-shadow:0 10px 24px rgba(0,0,0,.22);}
+.reveal {transition:opacity .45s ease-out,transform .45s ease-out;}
+.reveal.visible {opacity:1;transform:none;}
+@media (hover:none) {
+  .project-card:hover,.thought-card:hover {transform:none;box-shadow:none;}
+}
+@media (max-width:900px) {
+  .project-visual [class^="art-"]::after {font-size:clamp(34px,6vw,60px)!important;}
+}
+@media (max-width:720px) {
+  .nav-links.open,.journal-nav.open {padding-bottom:calc(42px + env(safe-area-inset-bottom));}
+  .nav-links.open a,.journal-nav.open a {min-height:58px;}
+  .nav-links.open a:focus-visible,.journal-nav.open a:focus-visible {outline-offset:-2px;}
+  .hero h1 {text-wrap:balance;}
+  .hero-description {font-size:15px;line-height:1.65;}
+  .project-visual [class^="art-"] {padding:20px;}
+  .project-visual [class^="art-"]::after {font-size:clamp(38px,10vw,52px)!important;}
+  .project-visual .art-agentcommerce::after,.project-visual .art-weave::after {font-size:clamp(27px,7.5vw,40px)!important;}
+  .project-overline {font-size:11px;}
+  .project-tags span {font-size:11px;}
+  .journal-entry-intro {font-size:13px;}
+  .journal-entry-body {font-size:14px;}
+  .stack-grid {gap:12px;}
+  .stack-box {min-height:0;}
+  .filter-bar,.journal-filter {row-gap:8px;}
+}
+@media (max-width:390px) {
+  .project-visual .art-rewind::after,.project-visual .art-sentinel::after {font-size:37px!important;}
+  .hero-actions {flex-wrap:wrap;}
+}
+@media (prefers-reduced-motion:reduce) {
+  .reveal {opacity:1;transform:none;transition:none!important;}
+  .filter-btn,.journal-filter-btn,.project-card,.thought-card,.journal-entry-toggle {transition:none!important;}
+  :is(.filter-btn,.journal-filter-btn,.btn):active {transform:none;}
+}
