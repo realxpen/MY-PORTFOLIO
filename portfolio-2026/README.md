@@ -1,50 +1,42 @@
-# XPEN — Personal Workspace (October 2026 concept)
+# Xpen Studio & Field Notes
 
-This is the static, user-facing portfolio in `portfolio-2026/`, deployed as an assets-only Cloudflare Worker through its **`public/`** directory. The repository root also contains a separate React/Vite application; **do not deploy that application as this portfolio**.
+Xpen's public portfolio is a combination of **creative studio and founder's personal journey**, not a SaaS landing page or productivity dashboard.
 
-## Why this iteration exists
+The deployed site lives in `portfolio-2026/public/`, mirrored byte-for-byte by site source under `portfolio-2026/`. The unrelated React/Vite app at repository root is a different surface.
 
-The previous version was a single marketing-like landing page with anchor sections. The new layout is a **personal workspace**: real, separate places for the work, the thoughts, current learning, and biography. It should feel like an interface to explore, not a sales funnel.
+## What visitors can explore
 
-## Real routes
-
-| Route | Purpose | Interactions |
+| Route | Public purpose | Interactions |
 | --- | --- | --- |
-| `/` | Overview / curated workbench | Active builds, latest journal entries, learning directions, navigation |
-| `/projects/` | Work explorer | Search, category filters, individual project inspector with source/demo links |
-| `/journal/` | Founder's Journal | Topic filters, full-text search, desktop two-pane reader, mobile native expandable notes, deep links |
-| `/now/` | Current focus | Dated snapshot of work, tests and learning; not real-time telemetry |
-| `/about/` | Personal profile | Background, tools, path, contact links |
+| `/` | Editorial studio introduction, three featured projects, selected journal note, current interests | Project deep links, page links, keyboard search |
+| `/projects/` | Catalog of all 12 authentic projects and prototypes | Search, filters, full project inspection dialog, demo/source links |
+| `/journal/` | Twelve authentic founder/engineering/learning notes | Topic filters, search, desktop two-pane paper reader, mobile native expandable notes, deep links |
+| `/now/` | Dated overview of the current work and learning | Contextual links into projects and journal |
+| `/about/` | Biography, background, contacts and the AED method | Direct contact and public social profiles |
 
-Other site-wide features: persistent desktop left navigation, mobile bottom navigation, global command search (`Ctrl+K` / `⌘K`, or `/` outside text inputs), native dialogs, keyboard focus and reduced-motion preferences.
+**Design:** dark ink and moss; deliberate lime accent; a warm printed-paper counterpoint for editorial content. The `x.` mark stays recognizable. The homepage feels like an evolving studio rather than a dashboard. Site navigation is a horizontal header and an accessible mobile menu, not a side rail or mobile bottom dock.
 
-## Real content
+**Technical:** `studio.css` is the final visual layer; `studio-nav.js` handles the responsive menu. `workspace.js` still powers global command search (`Ctrl+K`, `⌘K`), the project inspection dialog and desktop journal reader. Existing `projects-gallery.js` and `journal.js` retain authoritative records, filters, deep-link behavior and mobile native reading. The project and journal pages still load the old CSS layers under `workspace.css` so the content components remain functional.
 
-The 12 project entries are still authored in `projects-gallery.js`. The 12 original journal entries and their IDs remain in `journal/index.html`; `journal.js` still manages filters and mobile deep links. The new `workspace.js` adds global search, the project inspector and desktop reading pane. No invented metrics, fake integrations, financial execution, or real-time updates.
+The global command search is navigable by keyboard. Native `<dialog>` components handle dismissal and focus. The journal remains readable with JavaScript disabled; animation respects reduced-motion preferences.
 
-The October 2026 **Now** page is a manually edited public snapshot. Do not describe it as a live activity feed. Project status labels must remain accurate.
+## Content and honesty
 
-## Styles and architecture
+All **12 project records** and **12 existing journal articles** were preserved, as were real source/demo links, current stage labels and the existing Metricool tracker. The Now page is a public, **manually written October 2026 snapshot**, not a live GitHub activity feed or automated promise. No invented traction metrics or unapproved personal information.
 
-- `workspace.css` is the new shared visual system for Overview, Work, Journal, Now and About.
-- Project and journal pages additionally load the original `styles.css`, `xpen-redesign.css`, and `ui-ux-polish.css` for legacy cards and note content, followed by `workspace.css` as the final override.
-- `workspace.js` handles cross-page search and enhancement. It does not fetch user conversations, private data, or API tokens.
-- Metricool's existing portfolio tracker remains included once per route.
-- Each public asset/page has an identical source file under `portfolio-2026/` and a deployable mirror under `portfolio-2026/public/`.
-
-## Develop and verify
+## Local verification
 
 ```bash
+node portfolio-2026/verify-workspace.mjs
 cd portfolio-2026
-node verify-workspace.mjs
 python3 -m http.server 8080 --directory public
-# Open http://localhost:8080/
+# Visit http://localhost:8080
 ```
 
-Review using widths 320, 390, 768, 1024 and 1440 px and keyboard-only navigation. Test global search, project filters, opening an inspector, journal filters/reader, mobile native journal details, direct deep links, manifest resolution, focus rings and reduced motion. Automated checks run on pull requests via `.github/workflows/portfolio-workspace-check.yml`.
+The GitHub workflow `.github/workflows/portfolio-workspace-check.yml` runs the source and asset smoke checks. It cannot replace visual or interaction QA.
 
-## Deployment
+**Before merging:** inspect at 320, 390, 768, 1024, and 1440px; verify menu keyboard focus, real project filters, inspector deep links, desktop journal reading, mobile journal expansion, and the five actual routes. Check source/public mirror integrity, analytics, reduced motion and Chrome/Safari behavior. In particular, verify the reading pane and the visual rhythm of the studio at different sizes, not just JS syntax.
 
-The portfolio is currently developed against GitHub `main`, with `portfolio-2026/wrangler.jsonc` serving the `public` folder. A GitHub merge does **not** prove that Cloudflare has deployed the latest version. Check the actual Cloudflare Worker deployment and public URL before claiming the site is updated.
+## Cloudflare
 
-Do not merge the personal-workspace concept until review and visual QA are complete. Do not publish unapproved personal details or substitute project prototypes for production launch claims.
+The existing assets-only Cloudflare Worker uses `portfolio-2026/wrangler.jsonc` with `public/` as the output. GitHub merge is not proof that the Worker has deployed. Confirm the production deployment using actual Cloudflare evidence before claiming the site is live. Keep design experiments on review branches until approved.
