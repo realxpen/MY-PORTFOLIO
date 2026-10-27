@@ -44,7 +44,7 @@
       target.open = true;
       // The desktop workspace shows the entry in a dedicated reading pane.
       // Only scroll an opened accordion into view on the mobile layout.
-      if (!document.body.classList.contains('os-experience') || matchMedia('(max-width:760px)').matches) {
+      if (!document.body.classList.contains('os-experience') || matchMedia('(max-width:900px)').matches) {
         requestAnimationFrame(() => target.scrollIntoView({block:'start'}));
       }
     }
