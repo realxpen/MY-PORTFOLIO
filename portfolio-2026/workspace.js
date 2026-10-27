@@ -34,6 +34,7 @@
       const link = document.createElement('a');
       link.className = 'os-search-result';
       link.href = item.url;
+      link.addEventListener('click',() => {if (command?.open) command.close();});
       const details = document.createElement('span');
       const kind = document.createElement('span');
       kind.className = 'os-result-type';
@@ -66,8 +67,14 @@
     } else if(e.key === 'ArrowDown' && command?.open && document.activeElement === input) {
       const first = results?.querySelector('a');
       if(first){e.preventDefault();first.focus();}
-    } else if(e.key === 'ArrowUp' && command?.open && results?.contains(document.activeElement)) {
-      e.preventDefault();input?.focus();
+    } else if (command?.open && results?.contains(document.activeElement) && (e.key === 'ArrowDown' || e.key === 'ArrowUp')) {
+      const links=[...results.querySelectorAll('a')];
+      const current=links.indexOf(document.activeElement);
+      if (current!==-1) {
+        e.preventDefault();
+        const next=current+(e.key==='ArrowDown'?1:-1);
+        if(next<0)input?.focus();else links[Math.min(next,links.length-1)]?.focus();
+      }
     }
   });
 
@@ -118,9 +125,14 @@
   inspector?.addEventListener('close',()=>{
     if(location.hash.startsWith('#inspect-'))history.replaceState(null,'',location.pathname+location.search);
   });
-  if(grid && location.hash.startsWith('#inspect-')) {
-    requestAnimationFrame(()=>inspect(decodeURIComponent(location.hash.slice('#inspect-'.length)),false));
-  }
+  const readInspectHash = () => {
+    if(grid && location.hash.startsWith('#inspect-')) {
+      const id = decodeURIComponent(location.hash.slice('#inspect-'.length));
+      requestAnimationFrame(()=>{if(!inspector?.open)inspect(id,false);});
+    }
+  };
+  readInspectHash();
+  addEventListener('hashchange',readInspectHash);
 
   // Desktop journal: a note index on the left and a genuine reading pane.
   // On mobile the original native details/summary entries remain available.
