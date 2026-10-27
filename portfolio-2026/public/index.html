@@ -17,8 +17,10 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="workspace.css">
+<link rel="stylesheet" href="studio.css">
 
 <script src="workspace.js" defer></script>
+<script src="studio-nav.js" defer></script>
 <script>
   (function(){
     var s=document.createElement('script');s.src='https://tracker.metricool.com/resources/be.js';
@@ -27,71 +29,140 @@
   })();
 </script>
 </head>
-<body class="os-experience overview-page">
-
-<div class="os-shell">
-  <a class="os-skip" href="#main">Skip to content</a>
-  <aside class="os-sidebar" aria-label="Workspace navigation">
-    <a class="os-brand" href="/" aria-label="Xpen — overview"><span class="os-brand-mark">x<span>.</span></span><span class="os-brand-name"><strong>XPEN</strong><small>Personal workspace</small></span></a>
-    <p class="os-rail-label">Explore</p>
-    <nav class="os-side-nav" aria-label="Main navigation">
-      <a href="/" aria-current="page"><svg class="os-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z"/></svg><span>Overview</span></a>
-      <a href="/projects/" ><svg class="os-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="15" rx="2"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18"/></svg><span>Work</span></a>
-      <a href="/journal/" ><svg class="os-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg><span>Journal</span></a>
-      <a href="/now/" ><svg class="os-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg><span>Now</span></a>
-      <a href="/about/" ><svg class="os-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4.7 20a8 8 0 0 1 14.6 0"/></svg><span>About</span></a>
+<body class="os-experience studio-experience overview-page">
+<div id="top" aria-hidden="true"></div>
+<a class="os-skip" href="#main">Skip to main content</a>
+<header class="studio-header ">
+  <div class="studio-header-inner">
+    <a class="studio-brand" href="/" aria-label="Xpen Studio — home">
+      <span class="studio-brand-icon">x<span>.</span></span>
+      <span class="studio-brand-copy"><strong>XPEN</strong><small>STUDIO & FIELD NOTES</small></span>
+    </a>
+    <nav class="studio-navigation" id="studio-navigation" aria-label="Primary navigation">
+      <a href="/" aria-current="page">Studio</a>
+      <a href="/projects/" >Work</a>
+      <a href="/journal/" >Journal</a>
+      <a href="/now/" >Now</a>
+      <a href="/about/" >About</a>
     </nav>
-    <hr class="os-sidebar-divider">
-    <div class="os-rail-note"><strong>Learn. Apply. Exist.</strong>Projects, questions and lessons — an evolving record of what I'm building and becoming.</div>
-    <div class="os-rail-foot"><a class="os-mail" href="mailto:ayomide.david.oladeji@gmail.com"><svg class="os-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg> <span>Get in touch ↗</span></a><p>Designed & built by Xpen.</p></div>
-  </aside>
-  <div class="os-main">
-    <header class="os-topbar ">
-      <div class="os-breadcrumb"><a href="/">Xpen</a><span class="separator">/</span><strong>Overview</strong></div>
-      <div class="os-top-actions"><button type="button" id="os-search-trigger" class="os-command-trigger" aria-label="Search projects, notes and pages"><svg class="os-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16.3 16.3 4.3 4.3"/></svg><span class="os-search-label">Search the workspace</span><kbd>⌘ K</kbd></button><a class="os-top-contact" href="mailto:ayomide.david.oladeji@gmail.com">Say hello ↗</a></div>
-    </header>
-    <main class="os-content" id="main"><div class="os-page-heading">
-  <div><p class="os-eyebrow">Inside the work</p><h1>The work is still in progress.<br>That's the point.</h1><p>I'm Xpen, a product-minded engineer and founder. This is where the builds, experiments, and thinking behind them live — not just a highlight reel.</p></div>
-  <span class="os-meta-text">Workspace snapshot · October 2026</span>
-</div>
-<div class="os-dash">
-  <section class="os-panel os-panel-pad os-feature-board" aria-labelledby="current-builds"><div class="os-panel-head"><h2 id="current-builds">On the workbench</h2><a href="/projects/">All 12 projects ↗</a></div>
-    <div class="os-feature-list">
-      <a class="os-feature" href="/projects/#inspect-hustle"><span class="tag">In development</span><span class="os-arrow" aria-hidden="true">↗</span><h3 class="os-feature-name">Hustle.</h3><p>Helping skilled people get discovered, consulted and hired.</p><div class="os-flow" aria-label="Discovery, consultation and booking"><span>Discover</span><span>Consult</span><span>Book</span></div></a>
-      <a class="os-feature secondary" href="/projects/#inspect-moniflow"><span class="tag">Prototype</span><span class="os-arrow" aria-hidden="true">↗</span><h3 class="os-feature-name">MONIFlow.</h3><p>Turning financial intentions into plans people can review before taking action.</p><div class="os-flow" aria-label="Describe, review and approve"><span>Describe</span><span>Review</span><span>Approve</span></div></a>
+    <div class="studio-header-actions">
+      <button type="button" id="os-search-trigger" class="studio-search" aria-label="Search projects and journal notes" title="Search (Ctrl+K)"><svg class="os-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16.3 16.3 4.3 4.3"/></svg></button>
+      <a class="studio-header-cta" href="mailto:ayomide.david.oladeji@gmail.com">Say hello <span aria-hidden="true">↗</span></a>
+      <button type="button" class="studio-menu-toggle" id="studio-menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="studio-navigation"><span></span><span></span></button>
     </div>
-  </section>
-  <section class="os-panel os-panel-pad os-focus-board" aria-labelledby="work-focus"><div class="os-panel-head"><h2 id="work-focus">What I'm focused on</h2><a href="/now/">More context ↗</a></div>
-    <div class="os-focus-list">
-      <div class="os-focus-item"><span class="num">01</span><div><strong>Booking journeys</strong><p>Consultation-first flows for Hustle's staging experience.</p></div></div>
-      <div class="os-focus-item"><span class="num">02</span><div><strong>Release confidence</strong><p>Mobile previews, verification and final acceptance checks.</p></div></div>
-      <div class="os-focus-item"><span class="num">03</span><div><strong>Intent, not autopilot</strong><p>Reviewable AI and financial actions with human boundaries.</p></div></div>
-      <div class="os-focus-item"><span class="num">04</span><div><strong>Making learning visible</strong><p>Writing notes as I learn, test and change my mind.</p></div></div>
-    </div>
-  </section>
-  <section class="os-panel os-panel-pad os-notes-board" aria-labelledby="latest-notes"><div class="os-panel-head"><h2 id="latest-notes">From the journal</h2><a href="/journal/">Read every note ↗</a></div>
-    <div class="os-note-list">
-      <a class="os-note-row" href="/journal/#three-different-meanings-of-shipped"><time datetime="2026-10-25">Oct 25, 2026</time><strong>Three different meanings of shipped.</strong><span aria-hidden="true">↗</span></a>
-      <a class="os-note-row" href="/journal/#day-18-inflation-interest-exchange"><time datetime="2026-10-23">Oct 23, 2026</time><strong>Money has a price, and its value can change.</strong><span aria-hidden="true">↗</span></a>
-      <a class="os-note-row" href="/journal/#day-17-productivity-development"><time datetime="2026-10-22">Oct 22, 2026</time><strong>Growth is more than working harder.</strong><span aria-hidden="true">↗</span></a>
-    </div>
-  </section>
-  <section class="os-panel os-panel-pad os-learning-board" aria-labelledby="now-learning"><div class="os-panel-head"><h2 id="now-learning">Learning in public</h2><a href="/now/">Open learning log ↗</a></div>
-    <div class="os-learning-item"><h3>Product judgement</h3><p>Testing demand and building trust before adding complexity.</p></div>
-    <div class="os-learning-item"><h3>Engineering reliability</h3><p>Knowing the difference between merged, deployed and verified.</p></div>
-    <div class="os-learning-item"><h3>Financial thinking</h3><p>Ownership, interest, inflation and what they mean for decisions.</p></div>
-    <div class="os-learning-item"><h3>Clear communication</h3><p>Documenting the reasoning, not only the result.</p></div>
-  </section>
-  <section class="os-panel os-profile-card" aria-label="About Xpen"><p class="intro">I like the messy middle: where an idea becomes a system, meets a person, and starts teaching you something. <em>Learn. Apply. Exist.</em></p><div class="actions"><a class="os-button" href="/about/">Meet the builder ↗</a><a class="os-button primary" href="mailto:ayomide.david.oladeji@gmail.com">Get in touch ↗</a></div></section>
-</div>
-      <div class="os-minifooter"><span>© <span id="year">2026</span> XPEN · Learn. Apply. Exist.</span><span><a href="https://github.com/realxpen" target="_blank" rel="noopener noreferrer">GitHub</a> &nbsp;·&nbsp; <a href="https://x.com/xpendesign" target="_blank" rel="noopener noreferrer">X</a> &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/xpenhimself/" target="_blank" rel="noopener noreferrer">LinkedIn</a></span></div>
-    </main>
   </div>
-  <nav class="os-bottom-nav" aria-label="Mobile navigation"><a href="/" aria-current="page"><svg class="os-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z"/></svg><span>Overview</span></a><a href="/projects/" ><svg class="os-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="15" rx="2"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18"/></svg><span>Work</span></a><a href="/journal/" ><svg class="os-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/></svg><span>Journal</span></a><a href="/now/" ><svg class="os-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg><span>Now</span></a><a href="/about/" ><svg class="os-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4.7 20a8 8 0 0 1 14.6 0"/></svg><span>About</span></a></nav>
-  <dialog class="os-command" id="os-command" aria-label="Search the Xpen workspace">
+</header>
+<main class="os-content studio-main" id="main">
+
+<section class="studio-hero" aria-labelledby="studio-intro">
+  <div class="studio-hero-topline">
+    <span class="studio-eyebrow">XPEN / A CREATIVE ENGINEERING PRACTICE</span>
+    <span class="studio-eyebrow status">BUILDING, LEARNING, EXPERIMENTING</span>
+  </div>
+  <div class="studio-hero-layout">
+    <div class="studio-hero-main">
+      <h1 id="studio-intro">A life spent<br><span class="quiet">turning ideas</span><br>into <span class="underline">something.</span></h1>
+      <div class="studio-hero-copy">
+        <p class="intro">I'm <strong>Xpen</strong> — a product-minded engineer and founder. I build products, follow strange questions, and document what the process teaches me.</p>
+        <p class="intro">This is part studio, part notebook. Everything here is a work in progress, including me.</p>
+        <div class="studio-hero-actions">
+          <a class="studio-action" href="/projects/">Explore the work <span aria-hidden="true">↗</span></a>
+          <a class="studio-plain-link" href="/journal/">Read the thinking <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="studio-edition" role="img" aria-label="Typographic studio poster featuring the Xpen x. mark and the words Learn, Apply, Exist">
+      <div class="studio-edition-top"><span>STUDIO NOTES · VOLUME 01</span><span>LAGOS / 2026</span></div>
+      <div class="studio-edition-stamp">LEARN<br>APPLY<br>EXIST</div>
+      <div class="studio-edition-center"><div class="studio-edition-monogram">x<span>.</span></div></div>
+      <div class="studio-edition-bottom"><span>MAKE THINGS.<br>MAKE SENSE OF THEM.</span><span>OPEN PRACTICE<br>NOT A FINISHED STORY</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="studio-section" id="work" aria-labelledby="featured-work-title">
+  <div class="studio-section-heading">
+    <div><p class="studio-eyebrow">ON THE WORKBENCH / THREE SELECTED BUILDS</p><h2 class="studio-section-title" id="featured-work-title">Things I'm making.</h2></div>
+    <a class="studio-plain-link" href="/projects/">Open the complete archive <span aria-hidden="true">↗</span></a>
+  </div>
+  <div class="studio-feature-grid">
+    <a class="studio-project featured" href="/projects/#inspect-hustle">
+      <div><span class="project-index">01 / MAIN PROJECT</span><p class="project-type">Marketplace · In development</p></div>
+      <div><h3 class="project-title">hustle.</h3><p class="project-summary">A content-first marketplace for people who turn skill into a living. Discovery, consultation, booking and trust.</p></div>
+      <div class="project-bottom"><span>BUILT AROUND PEOPLE, NOT PROFILES</span><span class="project-arrow" aria-hidden="true">↗</span></div>
+    </a>
+    <a class="studio-project aeon" href="/projects/#inspect-aeon">
+      <div><span class="project-index">02 / AGENT EXPERIMENT</span><p class="project-type">Human-controlled AI · Prototype</p></div>
+      <div><h3 class="project-title">AEON.</h3><p class="project-summary">What if an agent could research the options, while the human keeps the final say?</p></div>
+      <div class="project-bottom"><span>AI THAT KNOWS WHEN TO ASK</span><span class="project-arrow" aria-hidden="true">↗</span></div>
+    </a>
+    <a class="studio-project moni" href="/projects/#inspect-moniflow">
+      <div><span class="project-index">03 / FINTECH EXPLORATION</span><p class="project-type">Financial intentions · Prototype</p></div>
+      <div><h3 class="project-title">MONIFlow.</h3><p class="project-summary">Turning financial instructions into plans people can understand and review before acting.</p></div>
+      <div class="project-bottom"><span>INTENT BEFORE ACTION</span><span class="project-arrow" aria-hidden="true">↗</span></div>
+    </a>
+  </div>
+</section>
+
+<section class="studio-section" id="notes" aria-labelledby="notes-heading">
+  <div class="studio-section-heading">
+    <div><p class="studio-eyebrow">THE OTHER HALF OF BUILDING</p><h2 class="studio-section-title" id="notes-heading">Notes from the process.</h2></div>
+    <p>Not a list of achievements. A record of what worked, what didn't, and the questions I'm still asking.</p>
+  </div>
+  <div class="studio-journal-spread">
+    <div class="studio-journal-spread-inner">
+      <div class="studio-journal-label">FOUNDER'S JOURNAL / NOTE 12
+        <p>I write because building changes what I believe. The notes aren't polished answers; they're evidence of the thinking behind the work.</p>
+        <a class="studio-plain-link" href="/journal/">Browse all 12 notes ↗</a>
+      </div>
+      <div class="studio-journal-main">
+        <span class="date">OCTOBER 25, 2026 · ENGINEERING / FOUNDER</span>
+        <h2>Three different meanings of shipped.</h2>
+        <p>A feature can be merged while its environment still needs work. A deployment can succeed while the experience still needs to be verified. I'm learning to separate writing the code, deploying the system, and proving it actually works.</p>
+        <a class="studio-plain-link" href="/journal/#three-different-meanings-of-shipped">Read the full note <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="studio-section" id="now" aria-labelledby="studio-now-heading">
+  <div class="studio-section-heading">
+    <div><p class="studio-eyebrow">A SNAPSHOT, NOT A FINISH LINE</p><h2 class="studio-section-title" id="studio-now-heading">What I'm figuring out.</h2></div>
+    <a class="studio-plain-link" href="/now/">Open my current notes ↗</a>
+  </div>
+  <div class="studio-now-cards">
+    <div class="studio-now-item"><small>01 / BUILDING</small><h3>Making Hustle genuinely useful</h3><p>Consultation and booking flows, real-device verification, and the trust behind a service.</p></div>
+    <div class="studio-now-item"><small>02 / LEARNING</small><h3>Understanding the business behind the product</h3><p>Company ownership, productivity, inflation, interest and better founder decisions.</p></div>
+    <div class="studio-now-item"><small>03 / EXISTING</small><h3>Showing more of the journey</h3><p>Finding a simple way to share experiments, personal growth and the messy middle of learning.</p></div>
+  </div>
+  <div class="studio-letter">
+    <p><strong>Learn. Apply. Exist.</strong> It's less a tagline and more the way I'm trying to live: pay attention, build something, notice what changes, repeat.</p>
+    <a class="studio-plain-link" href="/about/">The person behind the projects ↗</a>
+  </div>
+</section>
+
+</main>
+<footer class="studio-footer">
+  <div class="studio-footer-inner">
+    <div class="studio-footer-top">
+      <a class="studio-footer-name" href="/">xpen<span>.</span></a>
+      <p class="studio-footer-note">Make things. Stay curious. Keep a record of what you're learning. <strong>Learn. Apply. Exist.</strong></p>
+    </div>
+    <div class="studio-footer-bottom">
+      <span>© <span id="year">2026</span> XPEN · A WORK IN PROGRESS</span>
+      <div class="socials">
+        <a href="https://github.com/realxpen" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/xpenhimself/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://x.com/xpendesign" target="_blank" rel="noopener noreferrer">X</a>
+        <a href="mailto:ayomide.david.oladeji@gmail.com">Email</a>
+      </div>
+      <a href="#top">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
+<dialog class="os-command" id="os-command" aria-label="Search the Xpen workspace">
     <div class="os-command-head"><svg class="os-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16.3 16.3 4.3 4.3"/></svg><input type="search" id="os-search-input" placeholder="Projects, notes, topics or pages…" autocomplete="off" aria-label="Search projects, journal entries and pages"/><button id="os-search-close" type="button">Esc</button></div>
     <div class="os-command-results" id="os-search-results"></div><div class="os-command-foot">Press ↑ or ↓ to navigate. Enter opens an item.</div>
   </dialog>
-</div>
 </body>
 </html>
