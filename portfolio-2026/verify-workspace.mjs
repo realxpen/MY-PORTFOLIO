@@ -39,8 +39,11 @@ for (const path of pages) {
 const home=read('index.html'),journal=read('journal/index.html'),gallery=read('projects-gallery.js');
 assert(home.includes('class="studio-hero"'),'Distinctive editorial home missing');
 assert(home.includes('id="notes"'),'Journal feature link missing');
-assert.equal((journal.match(/<details class="journal-entry"/g)||[]).length,12,'Must preserve 12 authored journal entries');
+assert.equal((journal.match(/<details class="journal-entry"/g)||[]).length,13,'Must contain 13 authored journal entries');
 assert.equal((gallery.match(/\bid: '[^']+', number:/g)||[]).length,12,'Must preserve 12 authored project entries');
+assert(journal.includes('id="better-booking-before-signups"'),'Newest journal deep link missing');
+assert(home.includes('/journal/#better-booking-before-signups'),'Featured journal deep link missing');
+assert(read('workspace.js').includes('/journal/#better-booking-before-signups'),'New journal note missing from command search');
 assert(gallery.includes('class="inspect-project"'),'Project inspection action missing');
 for(const path of ['studio-nav.js','workspace.js','projects-gallery.js','journal.js']) {
   new Script(read(path),{filename:path});
@@ -49,4 +52,4 @@ const css=read('studio.css');
 assert(css.includes('prefers-reduced-motion'),'Reduced-motion support required');
 assert(css.includes('.studio-navigation'),'Creative studio nav CSS missing');
 assert(css.includes('.studio-journal-spread'),'Editorial journal teaser missing');
-console.log('PASS: Xpen Studio routes, 12 projects, 12 notes, source/public mirrors, referenced assets, scripts, accessible nav and SEO/tracking.');
+console.log('PASS: Xpen Studio routes, 12 projects, 13 notes, source/public mirrors, referenced assets, scripts, accessible nav and SEO/tracking.');
