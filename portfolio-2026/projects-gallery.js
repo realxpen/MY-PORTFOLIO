@@ -75,13 +75,6 @@ const projects = [
     tags: ['Python', 'Roboflow', 'React', 'Realtime AI'], categories: ['agents', 'research'], status: 'Hackathon build',
     role: 'Vision Agents Challenge', repo: 'https://github.com/realxpen/Sentinel_AI', demo: '',
     wide: false, art: 'safety'
-  },
-  {
-    id: 'fintech-redesign', number: '12', name: 'Fintech UI Lab', subtitle: 'Exploring better money interfaces.',
-    description: 'A fintech interface redesign exploring approachable dashboards, information hierarchy, reusable components and product polish.',
-    tags: ['UI/UX', 'React', 'Figma'], categories: ['fintech', 'research'], status: 'Design exploration',
-    role: 'Independent design experiment', repo: 'https://github.com/realxpen/Fintechappredesign', demo: '',
-    wide: false, art: 'fintech-design'
   }
 ];
 

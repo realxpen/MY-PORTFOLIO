@@ -40,11 +40,14 @@ const home=read('index.html'),journal=read('journal/index.html'),gallery=read('p
 assert(home.includes('class="studio-hero"'),'Distinctive editorial home missing');
 assert(home.includes('id="notes"'),'Journal feature link missing');
 assert.equal((journal.match(/<details class="journal-entry"/g)||[]).length,13,'Must contain 13 authored journal entries');
-assert.equal((gallery.match(/\bid: '[^']+', number:/g)||[]).length,12,'Must preserve 12 authored project entries');
+assert.equal((gallery.match(/\bid: '[^']+', number:/g)||[]).length,11,'Must contain 11 authored project entries');
 assert(journal.includes('id="better-booking-before-signups"'),'Newest journal deep link missing');
 assert(home.includes('/journal/#better-booking-before-signups'),'Featured journal deep link missing');
 assert(read('workspace.js').includes('/journal/#better-booking-before-signups'),'New journal note missing from command search');
 assert(gallery.includes('class="inspect-project"'),'Project inspection action missing');
+assert(!gallery.includes("id: 'fintech-redesign'") && !gallery.includes('Fintech UI Lab'),'Removed Fintech UI Lab project must remain absent');
+assert(!read('workspace.js').includes('/projects/#inspect-fintech-redesign'),'Removed project must not appear in global search');
+assert(read('projects/index.html').includes('11 authored projects'),'Project count must reflect 11 entries');
 for(const path of ['studio-nav.js','workspace.js','projects-gallery.js','journal.js']) {
   new Script(read(path),{filename:path});
 }
@@ -52,4 +55,4 @@ const css=read('studio.css');
 assert(css.includes('prefers-reduced-motion'),'Reduced-motion support required');
 assert(css.includes('.studio-navigation'),'Creative studio nav CSS missing');
 assert(css.includes('.studio-journal-spread'),'Editorial journal teaser missing');
-console.log('PASS: Xpen Studio routes, 12 projects, 13 notes, source/public mirrors, referenced assets, scripts, accessible nav and SEO/tracking.');
+console.log('PASS: Xpen Studio routes, 11 projects, 13 notes, source/public mirrors, referenced assets, scripts, accessible nav and SEO/tracking.');
