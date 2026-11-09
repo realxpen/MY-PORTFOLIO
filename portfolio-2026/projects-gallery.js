@@ -1,7 +1,7 @@
 const projects = [
   {
     id: 'hustle', number: '01', name: 'Hustle', subtitle: 'The Economy of You',
-    description: 'Hustle is a content-first marketplace connecting skilled professionals with people who need their services. Development has expanded from discovery, consultation, and booking into test-only payment verification, service operations, and more personalized onboarding. Recent engineering work includes authentication integration, skills and interests selection, booking coordination, and protected escrow testing. Several improvements remain in isolated preview environments rather than a public release. The current focus is reliable end-to-end acceptance, mobile usability, and making it easier for people to complete real service journeys.',
+    description: 'Hustle is a content-first marketplace connecting skilled professionals with people who need their services. The product combines discovery, consultation, booking, and trust-oriented service workflows. Recent engineering work has focused on creator onboarding, professional permissions, private media infrastructure, and safer verification environments. Automated tests and isolated previews have demonstrated progress, while independent end-to-end acceptance and production activation remain ongoing. The current priority is proving reliable user journeys before expanding live capabilities.',
     tags: ['React Native', 'NestJS', 'PostgreSQL', 'Product Strategy'], categories: ['products'], status: 'In development',
     role: 'Founder · Product & engineering', repo: 'https://github.com/realxpen/hustle-economy-of-you',
     demo: '', wide: true, art: 'hustle'
