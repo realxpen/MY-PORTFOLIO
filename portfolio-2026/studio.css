@@ -427,3 +427,21 @@ body.os-experience.studio-experience {
 @media(prefers-reduced-motion:reduce){
   .studio-experience *, .studio-experience *::before,.studio-experience *::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}
 }
+
+/* CareSlot: a restrained calendar motif for the assessment project card. */
+.studio-experience.projects-page .art-careslot{
+  position:absolute;inset:0;overflow:hidden;
+  background:radial-gradient(ellipse at 75% 20%,#b6de7d29,transparent 55%),linear-gradient(130deg,#243b2e,#101f19);
+}
+.studio-experience.projects-page .art-careslot::before{
+  content:"";position:absolute;left:33%;top:17%;width:35%;height:68%;
+  border-radius:11px;transform:rotate(-7deg);
+  background:linear-gradient(to bottom,#a9d58c 0 24%,#273e31 24% 100%);
+  box-shadow:0 12px 32px #0008,0 0 0 1px #d0ebbb66;
+}
+.studio-experience.projects-page .art-careslot::after{
+  content:"✓";position:absolute;left:50.5%;top:55%;transform:translate(-50%,-50%) rotate(-7deg);
+  display:grid;place-items:center;width:36px;height:36px;border-radius:50%;
+  background:#a9d58c;color:#14251b;font:700 22px/1 system-ui;
+  box-shadow:0 0 0 6px #a9d58c1c;
+}

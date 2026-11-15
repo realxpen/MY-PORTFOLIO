@@ -61,4 +61,5 @@ const css=read('studio.css');
 assert(css.includes('prefers-reduced-motion'),'Reduced-motion support required');
 assert(css.includes('.studio-navigation'),'Creative studio nav CSS missing');
 assert(css.includes('.studio-journal-spread'),'Editorial journal teaser missing');
+assert(css.includes('.art-careslot'),'CareSlot project visual treatment missing');
 console.log('PASS: Xpen Studio routes, 12 projects, 15 notes, source/public mirrors, referenced assets, scripts, accessible nav and SEO/tracking.');
