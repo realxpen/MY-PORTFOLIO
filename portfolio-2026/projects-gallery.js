@@ -1,7 +1,7 @@
 const projects = [
   {
     id: 'hustle', number: '01', name: 'Hustle', subtitle: 'The Economy of You',
-    description: 'Hustle is a content-first marketplace connecting skilled professionals with people who need their services. The product combines discovery, consultation, booking, and trust-oriented service workflows. Recent engineering work has focused on creator onboarding, professional permissions, private media infrastructure, and safer verification environments. Automated tests and isolated previews have demonstrated progress, while independent end-to-end acceptance and production activation remain ongoing. The current priority is proving reliable user journeys before expanding live capabilities.',
+    description: 'Hustle is a content-first marketplace connecting skilled professionals with people who need their services. The product combines discovery, consultation, booking, and trust-oriented service workflows. Recent engineering work has focused on creator onboarding, professional permissions, private media infrastructure, and safer verification environments. Recent development also includes consent-first research workflows, protected respondent infrastructure, and Business OS operational controls. Much of this work remains in isolated or unmerged branches, with hosted acceptance and controlled activation still outstanding.',
     tags: ['React Native', 'NestJS', 'PostgreSQL', 'Product Strategy'], categories: ['products'], status: 'In development',
     role: 'Founder · Product & engineering', repo: 'https://github.com/realxpen/hustle-economy-of-you',
     demo: '', wide: true, art: 'hustle'
@@ -75,6 +75,13 @@ const projects = [
     tags: ['Python', 'Roboflow', 'React', 'Realtime AI'], categories: ['agents', 'research'], status: 'Hackathon build',
     role: 'Vision Agents Challenge', repo: 'https://github.com/realxpen/Sentinel_AI', demo: '',
     wide: false, art: 'safety'
+  },
+  {
+    id: 'careslot', number: '12', name: 'CareSlot', subtitle: 'Appointment booking with concurrency safeguards',
+    description: 'CareSlot is an appointment-booking application built to explore reliable scheduling and backend correctness. It supports booking history, cancellation, pagination, idempotency, and patient scheduling conflict checks. The implementation combines transactional booking logic with database constraints to help prevent conflicting confirmed appointments. Local tests and production builds passed, while deployed end-to-end behavior remains separately subject to verification.',
+    tags: ['Next.js', 'TypeScript', 'PostgreSQL', 'Engineering'], categories: ['products', 'research'], status: 'Assessment project',
+    role: 'Engineering assessment', repo: 'https://github.com/realxpen/CareSlot', demo: '',
+    wide: false, art: 'careslot'
   }
 ];
 

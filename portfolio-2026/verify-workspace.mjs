@@ -39,17 +39,21 @@ for (const path of pages) {
 const home=read('index.html'),journal=read('journal/index.html'),gallery=read('projects-gallery.js');
 assert(home.includes('class="studio-hero"'),'Distinctive editorial home missing');
 assert(home.includes('id="notes"'),'Journal feature link missing');
-assert.equal((journal.match(/<details class="journal-entry"/g)||[]).length,14,'Must contain 14 authored journal entries');
-assert.equal((gallery.match(/\bid: '[^']+', number:/g)||[]).length,11,'Must contain 11 authored project entries');
+assert.equal((journal.match(/<details class="journal-entry"/g)||[]).length,15,'Must contain 15 authored journal entries');
+assert.equal((gallery.match(/\bid: '[^']+', number:/g)||[]).length,12,'Must contain 12 authored project entries');
 assert(journal.includes('id="better-booking-before-signups"'),'Previous journal deep link missing');
-assert(journal.includes('id="building-isnt-proving"'),'Newest journal deep link missing');
-assert(home.includes('/journal/#building-isnt-proving'),'Featured journal deep link missing');
-assert(read('workspace.js').includes('/journal/#building-isnt-proving'),'New journal note missing from command search');
+assert(journal.includes('id="building-isnt-proving"'),'Prior journal deep link missing');
+assert(journal.includes('id="invisible-work-is-the-product"'),'Newest journal deep link missing');
+assert(home.includes('/journal/#invisible-work-is-the-product'),'Featured journal deep link missing');
+assert(read('workspace.js').includes('/journal/#building-isnt-proving'),'Previous journal note missing from command search');
+assert(read('workspace.js').includes('/journal/#invisible-work-is-the-product'),'Newest journal note missing from command search');
 assert(read('workspace.js').includes('/journal/#better-booking-before-signups'),'Prior journal note missing from command search');
 assert(gallery.includes('class="inspect-project"'),'Project inspection action missing');
+assert(gallery.includes("id: 'careslot'") && gallery.includes("status: 'Assessment project'"),'CareSlot assessment listing missing');
+assert(read('workspace.js').includes('/projects/#inspect-careslot'),'CareSlot global search entry missing');
 assert(!gallery.includes("id: 'fintech-redesign'") && !gallery.includes('Fintech UI Lab'),'Removed Fintech UI Lab project must remain absent');
 assert(!read('workspace.js').includes('/projects/#inspect-fintech-redesign'),'Removed project must not appear in global search');
-assert(read('projects/index.html').includes('11 authored projects'),'Project count must reflect 11 entries');
+assert(read('projects/index.html').includes('12 authored projects'),'Project count must reflect 12 entries');
 for(const path of ['studio-nav.js','workspace.js','projects-gallery.js','journal.js']) {
   new Script(read(path),{filename:path});
 }
@@ -57,4 +61,4 @@ const css=read('studio.css');
 assert(css.includes('prefers-reduced-motion'),'Reduced-motion support required');
 assert(css.includes('.studio-navigation'),'Creative studio nav CSS missing');
 assert(css.includes('.studio-journal-spread'),'Editorial journal teaser missing');
-console.log('PASS: Xpen Studio routes, 11 projects, 14 notes, source/public mirrors, referenced assets, scripts, accessible nav and SEO/tracking.');
+console.log('PASS: Xpen Studio routes, 12 projects, 15 notes, source/public mirrors, referenced assets, scripts, accessible nav and SEO/tracking.');

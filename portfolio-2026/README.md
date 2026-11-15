@@ -9,8 +9,8 @@ The deployed site lives in `portfolio-2026/public/`, mirrored byte-for-byte by s
 | Route | Public purpose | Interactions |
 | --- | --- | --- |
 | `/` | Editorial studio introduction, three featured projects, selected journal note, current interests | Project deep links, page links, keyboard search |
-| `/projects/` | Catalog of all 11 authentic projects and prototypes | Search, filters, full project inspection dialog, demo/source links |
-| `/journal/` | Fourteen authentic founder/engineering/learning notes | Topic filters, search, desktop two-pane paper reader, mobile native expandable notes, deep links |
+| `/projects/` | Catalog of all 12 authentic projects and prototypes | Search, filters, full project inspection dialog, demo/source links |
+| `/journal/` | Fifteen authentic founder/engineering/learning notes | Topic filters, search, desktop two-pane paper reader, mobile native expandable notes, deep links |
 | `/now/` | Dated overview of the current work and learning | Contextual links into projects and journal |
 | `/about/` | Biography, background, contacts and the AED method | Direct contact and public social profiles |
 
@@ -22,7 +22,7 @@ The global command search is navigable by keyboard. Native `<dialog>` components
 
 ## Content and honesty
 
-All **11 remaining project records** and **14 journal articles** are preserved, as were real source/demo links, current stage labels and the existing Metricool tracker. The Now page is a public, **manually written November 8, 2026 snapshot**, not a live GitHub activity feed or automated promise. No invented traction metrics or unapproved personal information.
+The **12 project records** (including CareSlot, clearly marked as an assessment project) and **15 journal articles** are represented, with real source/demo links, appropriate stage labels and the existing Metricool tracker preserved. The Now page is a public, **manually written November 15, 2026 snapshot**, not a live GitHub activity feed or automated promise. No invented traction metrics or unapproved personal information.
 
 ## Local verification
 
